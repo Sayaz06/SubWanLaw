@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SubPlanner</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0077ff">
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("service-worker.js");
+        }
+    </script>
+</head>
+
+<body>
+
+<h1>SubPlanner</h1>
+<p class="note">
+    App ini adalah nota penerangan bagi app Planner.<br>
+    Anda boleh tambah nota untuk setiap hari (Isnin–Ahad).
+</p>
+
+<div class="days-container" id="daysContainer"></div>
+
+<h2>Nota Keterangan Hari</h2>
+<textarea id="noteInput" rows="30" placeholder="Tulis nota penerangan anda di sini..."></textarea>
+
+<div class="btn-row">
+    <button onclick="saveNote()">Simpan Nota</button>
+    <button onclick="resetNote()">Reset Nota</button>
+</div>
+
+<h2>Import / Export Data</h2>
+<div class="import-export-box">
+    <button onclick="exportData()">Export JSON</button>
+    <input type="file" id="fileInput" onchange="importData()" />
+</div>
+
+<h2>Music Super For Start</h2>
+<audio id="bgMusic" controls>
+    <source src="music-super-for-start.mp3" type="audio/mpeg">
+</audio>
+
+<script src="app.js"></script>
+
+</body>
+</html>
